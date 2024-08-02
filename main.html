@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="css/style.css" type="text/CSS">
+</head>
+<body>
+    <div id="main-screen">
+        <header>
+          <div class="container">
+            <h1>Video Conference</h1>
+            <nav>
+              <ul>
+                <li><button onclick="showProfile()">Profile</button></li>
+                <li><button onclick="logout()">Logout</button></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+    
+        <main class="container">
+          <section id="dashboard" class="active">
+            <h2>Dashboard</h2>
+            <button class="btn" onclick="showSection('create-video-call')">Create Video Call</button>
+            <button class="btn" onclick="showSection('join-video-call')">Join Video Call</button>
+            <button class="btn" onclick="showSection('create-voice-call')">Create Voice Call</button>
+            <button class="btn" onclick="showSection('join-voice-call')">Join Voice Call</button>
+          </section>
+    
+          <section id="create-video-call" class="call-section">
+            <h2>Create Video Call</h2>
+            <p>Your meeting ID: <span id="video-call-id"></span></p>
+            <p>Your meeting password: <span id="video-call-password"></span></p>
+            <button class="btn" onclick="startVideoCall()">Start Video Call</button>
+            <button class="btn secondary" onclick="showSection('dashboard')">Back to Dashboard</button>
+          </section>
+    
+          <section id="join-video-call" class="call-section">
+            <h2>Join Video Call</h2>
+            <input type="text" placeholder="Meeting ID" id="join-video-id" required>
+            <input type="password" placeholder="Meeting Password" id="join-video-password" required>
+            <button class="btn" onclick="joinVideoCall()">Join Video Call</button>
+            <button class="btn secondary" onclick="showSection('dashboard')">Back to Dashboard</button>
+          </section>
+    
+          <section id="create-voice-call" class="call-section">
+            <h2>Create Voice Call</h2>
+            <p>Your meeting ID: <span id="voice-call-id"></span></p>
+            <p>Your meeting password: <span id="voice-call-password"></span></p>
+            <button class="btn" onclick="startVoiceCall()">Start Voice Call</button>
+            <button class="btn secondary" onclick="showSection('dashboard')">Back to Dashboard</button>
+          </section>
+    
+          <section id="join-voice-call" class="call-section">
+            <h2>Join Voice Call</h2>
+            <input type="text" placeholder="Meeting ID" id="join-voice-id" required>
+            <input type="password" placeholder="Meeting Password" id="join-voice-password" required>
+            <button class="btn" onclick="joinVoiceCall()">Join Voice Call</button>
+            <button class="btn secondary" onclick="showSection('dashboard')">Back to Dashboard</button>
+          </section>
+    
+          <section id="call-screen">
+            <h2>Call in Progress</h2>
+            <video id="video" controls autoplay style="display:none;"></video>
+            <audio id="audio" controls autoplay style="display:none;"></audio>
+            <div class="call-controls">
+              <button class="btn" onclick="toggleMute()">Mute/Unmute</button>
+              <button class="btn" onclick="showParticipants()">Participants</button>
+              <button class="btn" onclick="showDashboard()">Dashboard</button>
+              <button class="btn" onclick="showTranslation()">Translation</button>
+            </div>
+            <button class="btn secondary" onclick="endCall()">End Call</button>
+          </section>
+        </main>
+      </div>
+</body>
+</html>
