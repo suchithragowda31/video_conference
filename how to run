@@ -1,0 +1,8 @@
+download the file into xampp-htdocs
+if you want create a folder named mini in htdocs place all the files
+start xampp
+create database,tables in phpmyadmin
+to run: http://localhost/mini/index.html
+http://localhost/mini/signup.php
+.....
+
